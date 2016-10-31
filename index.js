@@ -1,30 +1,39 @@
-var request = require('request'),
-	options = {
-		url: 'http://pagerank.tw/google-suggest/result.php',
-		headers: {
-			'Accept-Language': 'en-US;q=0.6,en;q=0.4',
-			'User-Agent':'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.106 Safari/537.36',
-			'Accept': '*/*',
-			'Referer': 'http://pagerank.tw/google-suggest/',
-			'Cookie': 'sc_is_visitor_unique=rx8458189.1467605106.DA7C75C8094B4F2E6778F2522A64CCE2.1.1.1.1.1.1.1.1.1',
-			'Connection': 'keep-alive',
-			'Content-Type': 'text/plain; charset=utf-8'
-		},
-		qs:{
-			dc: 'Google.com',
-		}
-	}
+#!/usr/bin/env node
+// jshint esversion:6
 
+let request = require('request');
 
-module.exports = function(keywords,cb){
+let options = require('./lib/options.js');
+
+module.exports = function(keywords, cb) {
+	
 	options.qs.q = keywords;
-	request(options, (err,response,body)=>{
-		if (!err && response.statusCode == 200) {
-			var res = body.split('<BR>').slice(0,-1),
-				col = []
-			for (var i = 0; i < res.length; i++) if(res[i].length) col.push(res[i])
-			cb(err,col)
+	
+	request(options, (error, response, body) => {
+		
+		if (( ! error) && (response.statusCode == 200)) {
+			
+			let result = body.split('<BR>').slice(0, -1);
+			let col = [];
+			
+			for (let i = 0, l = result.length; i < l; i++) {
+				
+				if (result[i].length) {
+					
+					col.push(result[i]);
+					
+				}
+				
+			}
+			
+			cb(error, col);
+			
+		} else {
+			
+			cb(error, null);
+			
 		}
-		else cb(err,null)
-	})
-}
+		
+	});
+	
+};

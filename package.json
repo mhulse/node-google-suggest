@@ -1,10 +1,10 @@
 {
   "name": "node-google-suggest-en",
-  "version": "1.0.1",
-  "description": "Google Suggest keywords tool (English version).",
+  "version": "1.0.0",
+  "description": "Google Suggest keywords module (English version).",
   "main": "index.js",
   "dependencies": {
-    "request": "^2.72.0"
+    "request": "^2"
   },
   "devDependencies": {},
   "repository": {
@@ -28,7 +28,7 @@
   ],
   "license": "MIT",
   "homepage": "https://github.com/mhulse/node-google-suggest",
-	"bugs": {
-		"url": "https://github.com/mhulse/node-google-suggest/issues"
-	},
+  "bugs": {
+    "url": "https://github.com/mhulse/node-google-suggest/issues"
+  }
 }

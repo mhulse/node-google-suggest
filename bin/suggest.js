@@ -1,18 +1,26 @@
-var keyword = process.argv[2]
+#!/usr/bin/env node
 
-if(!keyword){
-	console.error('no keyword')
-	process.exit()
+var suggest = require('../index.js');
+var keyword = process.argv[2];
+
+if ( ! keyword) {
+	
+	console.error('no keyword');
+	
+	process.exitCode = 1;
+	
 }
 
-var suggest = require('../index.js')
+suggest(keyword, function(error, result) {
 
-
-suggest(keyword,function(err,res){
-
-	if(!err)
-		console.log(res)
-	else
-		console.log('no result')
-
-})
+	if( ! error) {
+		
+		console.log(result);
+		
+	} else {
+		
+		console.log('no result');
+		
+	}
+	
+});
