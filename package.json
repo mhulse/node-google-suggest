@@ -1,26 +1,34 @@
 {
-  "name": "node-google-suggest",
+  "name": "node-google-suggest-en",
   "version": "1.0.1",
-  "description": "google suggest -keywords tool",
+  "description": "Google Suggest keywords tool (English version).",
   "main": "index.js",
   "dependencies": {
     "request": "^2.72.0"
   },
   "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/LinZap/node-google-suggest.git"
+    "url": "https://github.com/mhulse/node-google-suggest.git"
   },
   "keywords": [
-    "keywords"
+    "keywords",
+    "google",
+    "suggest"
   ],
-  "author": "Zap",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://gitlab.com/LinZap/node-google-suggest/issues"
+  "author": {
+    "name": "Zap",
+    "url": "https://github.com/LinZap"
   },
-  "homepage": "https://gitlab.com/LinZap/node-google-suggest#README"
+  "contributors": [
+    {
+      "name": "mhulse",
+      "url": "https://github.com/mhulse"
+    }
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/mhulse/node-google-suggest",
+	"bugs": {
+		"url": "https://github.com/mhulse/node-google-suggest/issues"
+	},
 }

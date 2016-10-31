@@ -2,7 +2,7 @@ var request = require('request'),
 	options = {
 		url: 'http://pagerank.tw/google-suggest/result.php',
 		headers: {
-			'Accept-Language': 'zh-TW,zh;q=0.8,en-US;q=0.6,en;q=0.4',
+			'Accept-Language': 'en-US;q=0.6,en;q=0.4',
 			'User-Agent':'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.106 Safari/537.36',
 			'Accept': '*/*',
 			'Referer': 'http://pagerank.tw/google-suggest/',
@@ -11,7 +11,7 @@ var request = require('request'),
 			'Content-Type': 'text/plain; charset=utf-8'
 		},
 		qs:{
-			dc: 'Google.com.tw',
+			dc: 'Google.com',
 		}
 	}
 
@@ -28,4 +28,3 @@ module.exports = function(keywords,cb){
 		else cb(err,null)
 	})
 }
-
