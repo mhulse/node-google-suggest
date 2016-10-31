@@ -7,7 +7,7 @@ This module returns keywords based on input keyword; results are provided by <ht
 ## Usage
 
 ```bash
-$ cd node-google-suggest
+$ cd node-google-suggest-en
 $ npm install
 ```
 
@@ -46,11 +46,13 @@ Output:
 
 ## API
 
+Install:
+
 ```bash
 $ npm install node-google-suggest --save-dev
 ```
 
-### Require
+Require:
 
 ```js
 var suggest = require('node-google-suggest')
@@ -67,7 +69,7 @@ suggest(keyword, function(err, res) {
 })
 ```
 
-## Publish to npm
+## npm
 
 … because I forget:
 
